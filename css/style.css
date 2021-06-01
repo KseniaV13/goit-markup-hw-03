@@ -1,6 +1,15 @@
-/*удалить маркери списков*/
+/*сброс стилей*/
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
 }
 
 :root {
@@ -15,72 +24,66 @@ ul {
 }
 
 /*Шапка меню*/
-
+.section {
+  padding-bottom: 94px;
+  padding-top: 94px;
+}
 .body {
   font-family: 'Roboto', sans-serif;
   background: var(--while-color);
 }
 .container {
   width: 1200px;
+  padding: 0px 15px;
   margin: auto;
-  padding: 15px;
 }
 
-.main-naw {
+.main-nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .logo-header {
-  box-sizing: border-box;
-  font-family: Raleway;
+  display: block;
+  font-family: Raleway, sans-serif;
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
-  padding-bottom: 24px;
-  padding-top: 25px;
-  margin-left: 38px;
   color: var(--black-color);
 }
 .logo-header .web-header {
   color: var(--pretty-color);
 }
-
-.header .studio-a:visited {
+.header .active:visited {
   color: var(--pretty-color);
 }
-
 .header .logo-header:hover {
   color: var(--black-color);
-}
-
-.header .portfolio-a:visited {
-  color: var(--pretty-color);
 }
 
 .list-header {
   display: flex;
   align-items: center;
 }
-.list-header-menu > li {
-  display: inline-block;
-  font-size: 14px;
-  line-height: 1.14;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  margin-left: 50px;
+.list-header-menu {
+  display: flex;
+  margin-left: 93px;
 }
-
+.list-header-menu > li:not(:last-child) {
+  margin-right: 50px;
+}
 .list-header-contacts {
   display: flex;
-  margin-left: auto;
-  margin-left: 50px;
 }
+.list-header-contacts > li:not(:last-child) {
+  margin-right: 50px;
+}
+
 .list-header-contacts > li {
   font-size: 14px;
   line-height: 1.14;
   font-weight: 500;
   letter-spacing: 0.02em;
-  margin-left: 120px;
 }
 .header {
   font-weight: 500;
@@ -91,19 +94,18 @@ ul {
   line-height: 1.14;
   font-weight: 500;
   letter-spacing: 0.02em;
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 20px;
+  padding: 24px 0px 25px;
 }
 
-.list-header {
-  align-items: center;
-  margin: 0px;
-  padding: 0px;
-}
-.list-header a {
+.list-header a,
+.list-header-contacts a {
   color: #212121;
   text-decoration: none;
 }
-.list-header a:hover {
+.list-header a:hover,
+.list-header-contacts a:hover {
   color: var(--pretty-color);
 }
 
@@ -111,10 +113,6 @@ a.contacts {
   font-size: 14px;
   line-height: 24px;
   color: var(--grey-color);
-}
-
-.nav-list a:hover {
-  color: var(--pretty-color);
 }
 
 /*герой студия*/
@@ -135,14 +133,11 @@ a.contacts {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  padding-left: 400px;
-  padding-right: 400px;
   text-align: center;
   background: var(--dark-gray-color);
 }
 
 .title-main-bold {
-  margin-top: 0;
   font-style: normal;
   font-weight: 900;
   text-transform: uppercase;
@@ -151,27 +146,36 @@ a.contacts {
   line-height: 1.364em;
   text-align: center;
   color: var(--while-color);
+  margin-bottom: 30px;
 }
 .button {
   cursor: pointer;
+  font-weight: bold;
+  font-style: normal;
+  padding: 9.63px 32px;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
   background: var(--pretty-color);
   color: var(--while-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-  padding: 10px 32px;
 }
 
 /*4 пункта*/
-.nav-list-content {
-}
+
 .nav-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.nav-list .nav-list-title {
-  width: 270px;
+.nav-list-title {
+  flex-basis: calc((100% - 90px) / 4);
+  margin-right: 30px;
+}
+.nav-list-title:last-child {
+  margin: 0;
 }
 .nav-list > li {
   display: inline-block;
@@ -196,6 +200,7 @@ a.contacts {
   line-height: 16px;
   color: var(--black-color);
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .title-description {
   font-style: normal;
@@ -210,11 +215,13 @@ a.contacts {
   font-size: 18px;
   line-height: 2;
   color: var(--black-color);
+  margin: 0;
 }
 .card-description {
   font-size: 16px;
   line-height: 1.875;
   color: var(--grey-color);
+  margin: 0;
 }
 
 /*занятие*/
@@ -223,15 +230,19 @@ a.contacts {
   line-height: 42px;
   color: var(--black-color);
   text-align: center;
+  margin-top: 94px;
+  margin-bottom: 50px;
 }
 .work-list {
   display: flex;
   flex-wrap: wrap;
 }
 .work-image {
-  padding-right: 30px;
-  padding-bottom: 30px;
   flex-basis: calc((100% - 60px) / 3);
+  margin-right: 30px;
+}
+.work-image:last-child {
+  margin-right: 0;
 }
 
 /*Команда*/
@@ -245,10 +256,11 @@ a.contacts {
   flex-wrap: wrap;
 }
 .our-team-o {
+  flex-basis: calc((100% - 90px) / 4);
   margin-right: 30px;
-  margin-bottom: 30px;
-  flex-basis: calc((100% - 120px) / 4);
-  padding: 0px 0px 94px 0px;
+}
+.our-team-o:last-child {
+  margin-right: 0;
 }
 .our-list {
   text-align: center;
@@ -256,13 +268,15 @@ a.contacts {
   background: var(--while-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .title-team {
-  padding: 94px 0px 50px 0px;
   font-size: 36px;
   line-height: 42px;
   color: var(--black-color);
   text-align: center;
+  margin-bottom: 50px;
 }
 .name {
   font-weight: 500;
@@ -275,14 +289,16 @@ a.contacts {
   font-size: 16px;
   line-height: 19px;
   color: var(--grey-color);
+  margin-top: 10px;
 }
 
 /*Кнопки*/
 .all-button-portfolio {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 .all-button-portfolio > li {
-  display: inline-block;
   text-align: center;
   font-size: 16px;
   line-height: 1.625;
@@ -297,7 +313,6 @@ a.contacts {
   font-weight: 500;
   color: var(--black-color);
   border: none;
-  margin: 94px 0px 0px 0px;
 }
 .all-button:hover {
   color: var(--while-color);
@@ -323,20 +338,23 @@ a.contacts {
   margin-bottom: 0;
 }
 .card-content {
-  padding: 20px 24px;
   border: 1px solid #eeeeee;
   background: var(--while-color);
+  padding: 20px 24px;
 }
 img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 /*Футер*/
 .address {
   background: var(--dark-gray-color);
   border: none;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .address .logo:hover {
@@ -353,9 +371,9 @@ img {
   font-size: 26px;
   text-decoration: none;
   color: var(--while-color);
-  padding: 60px 0px 0px 38px;
-
   width: 145px;
+
+  margin-bottom: 20px;
 }
 .logo .web {
   color: var(--pretty-color);
@@ -373,4 +391,8 @@ img {
   line-height: 24px;
   color: var(--footer-contacts-color);
   text-decoration: none;
+}
+
+.adress-list > li:not(:last-child) {
+  margin-bottom: 9px;
 }

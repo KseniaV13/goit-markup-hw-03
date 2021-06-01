@@ -14,26 +14,26 @@
   <!--Шапка меню-->
   <body class="body">
     <header class="header">
-      <div class="container main-naw">
-        <a class="logo-header" href="./"><span class="web-header">Web</span>Studio</a>
+      <div class="container main-nav">
         <nav class="list-header">
+          <a class="logo-header" href="./"><span class="web-header">Web</span>Studio</a>
           <ul class="list-header-menu">
-            <li><a href="./index.html">Студия</a></li>
-            <li><a class="portfolio-a" href="./portfolio.html">Портфолио</a></li>
-            <li><a href="#address">Контакты</a></li>
-          </ul>
-
-          <ul class="list-header-contacts">
-            <li><a class="contacts" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-            <li><a class="contacts" href="tel:+380961111111">+38 096 111 11 11</a></li>
+            <li><a class="link" href="./index.html">Студия</a></li>
+            <li><a class="link active" href="./portfolio.html">Портфолио</a></li>
+            <li><a class="link" href="#address">Контакты</a></li>
           </ul>
         </nav>
+
+        <ul class="list-header-contacts">
+          <li><a class="contacts link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+          <li><a class="contacts link" href="tel:+380961111111">+38 096 111 11 11</a></li>
+        </ul>
       </div>
     </header>
 
     <!--Кнопки-->
     <main>
-      <section>
+      <section class="section">
         <h1 class="visually-hidden">Portfolio</h1>
         <div class="container">
           <ul class="all-button-portfolio">
@@ -43,12 +43,9 @@
             <li><button class="all-button" type="button">Дизайн</button></li>
             <li><button class="all-button" type="button">Маркетинг</button></li>
           </ul>
-        </div>
-      </section>
 
-      <!--Карточки-->
-      <section>
-        <div class="container">
+          <!--Карточки-->
+
           <ul class="card-list">
             <li class="card">
               <img class="card-image" src="image/img1.jpg" alt="ноутбук с изображением веб-сайта" />
